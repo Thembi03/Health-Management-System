@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style>
+        input[type="date"] {
+            width: 580px; 
+            height: 20px; 
+            font-size: 16px; 
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header2">
+        <div class="logo">
+            <h1>Selected-Clinic</h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="./index.html#home"><span>Home</span></a></li>
+                <li><a href="./booking.html" target="_blank"><span>Appointments</span></a></li>
+                <li><a href="./index.html#contact"><span>Contact</span></a></li>
+                <li><a href="./index.html#services"><span>Services</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section class="booking-section1" id="booking-section">
+    <h2>Book Your Appointment</h2>
+    <p>Ready to schedule your visit? Book your appointment now!</p>
+    
+    <!-- Appointment booking form -->
+    <form id="booking-form"class="booking-form" action="./process_booking.php" method="post">
+
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="text" name="national_id" id="national_id" placeholder="National ID" >
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <select name="department" required>
+            <option value="">Select Department</option>
+            <option value="general">General</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="dermatology">Dermatology</option>
+            <!-- maybe more departments as needed -->
+        </select>
+        <input type="date" name="appointment_date" id="appointment_date" required>
+        <select name="appointment_time" id="appointment_time" class="multi-column-dropdown" required>
+            <option value="">Select Appointment Time</option>
+        </select>
+        <textarea name="message" placeholder="Message (optional)"></textarea>
+        <button type="submit" class="booking-button" id="submitBooking">Submit</button>
+    </form>
+</section>
+	<script>
+    // Function to generate appointment times
+    function generateAppointmentTimes() {
+        var select = document.getElementById("appointment_time");
+
+        // Array of predefined appointment times
+        var appointmentTimes = ["08:00:00", "08:40:00", "09:20:00", "10:00:00", "10:40:00", "11:20:00", "12:00:00", "12:40:00", "13:20:00", "14:00:00", "14:40:00", "15:20:00", "16:00:00", "16:40:00", "17:20:00", "18:00:00", "18:40:00"];
+
+        // Loop to add appointment times to select dropdown
+        for (var i = 0; i < appointmentTimes.length; i++) {
+            var time = appointmentTimes[i];
+            
+            // Create option element
+            var option = document.createElement("option");
+            option.text = time;
+            option.value = time;
+            select.add(option);
+        }
+    }
+        function disableBookedTimes(bookedTimes) {
+        var select = document.getElementById("appointment_time");
+
+        // Loop through each option in the select dropdown
+        for (var i = 0; i < select.options.length; i++) {
+            var option = select.options[i];
+
+            // Check if the option's value (appointment time) is in the list of booked times
+            if (bookedTimes.includes(option.value)) {
+                // Disable the option
+                option.disabled = true;
+            }
+        }
+    }
+
+    function fetchBookedTimes() {
+    // Get the selected date from the appointment_date input field
+    var selectedDate = document.getElementById("appointment_date").value;
+
+    // Fetch booked appointment times for the selected date
+    fetch('get_booked_times.php?date=' + selectedDate)
+        .then(response => response.json())
+        .then(data => {
+            // Filter the data to include only the times for the selected date
+            var selectedDateTimes = data.filter(dateTime => dateTime.startsWith(selectedDate));
+
+            // Extract only the time part from the date-time strings
+            var bookedTimes = selectedDateTimes.map(dateTime => dateTime.split(' ')[1]);
+
+            // Call function to disable booked appointment times
+            disableBookedTimes(bookedTimes);
+        })
+        .catch(error => console.error('Error fetching booked times:', error));
+}
+
+    // Add event listener to the date input field to fetch booked appointment times when the date is changed
+    document.getElementById("appointment_date").addEventListener("change", fetchBookedTimes);
+    // Call fetchBookedTimes initially when the page loads
+    window.onload = fetchBookedTimes;
+    // Call function to generate appointment times when the page loads
+    window.onload = generateAppointmentTimes;
+    // Get the selected date from the appointment_date input field
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,319 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    background-color: #fff;
+}
+/* Style the navigation bar */
+.main-header{
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.header2{
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    top: 0;
+}
+.booking-section1{
+    margin-top: 50px;
+}
+.logo h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em; /* Adjust size as needed */
+    font-family: cursive;
+}
+
+nav {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    display: flexbox;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Style the home section */
+#home {
+    padding: 100px 20px 100px 20px; /* Adjust top padding to account for fixed header */
+    text-align: center;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.btn1 {
+    background-color: #f94449; /* Red background color */
+    color: #fff; /* White text color */
+    padding: 5px 10px; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+.btn2{
+    background-color: #fff; /* Red background color */
+    color: #333; /* White text color */
+    padding: 5px 10px; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */ 
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #bbb; /* Darker shade of red on hover */
+}
+#home {
+    font-size:  2.5rem ;
+    text-align: center; /* Center-align content */
+}
+
+.button-container {
+    margin-top: 20px; /* Add space above the buttons */
+}
+
+.button-container button {
+    margin: 0 10px; /* Add space between buttons */
+}
+.home-hero{
+    background-color: #643B9F; ; 
+}
+#hero {
+    
+    padding: 100px 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align content */
+    color: #fff; /* Dark text color */
+}
+
+#hero h1 {
+    margin-bottom: 20px; /* Add space below heading */
+}
+
+#hero p {
+    margin-bottom: 40px; /* Add space below paragraph */
+    font-size: 1.1em; /* Adjust font size */
+}
+
+.feature {
+    margin-bottom: 30px; /* Add space between features */
+}
+
+.feature h2 {
+    color: #fff; /* Red heading color */
+}
+
+.feature p {
+    font-size: 1.1em; /* Adjust font size */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    #hero {
+        padding: 80px 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #hero {
+        padding: 60px 20px; /* Further adjust padding for smaller screens */
+    }
+
+    .feature p {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+}
+
+#services {
+    padding: 100px 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align content */
+}
+
+#services h2 {
+    margin-bottom: 40px; /* Add space below heading */
+}
+
+.service {
+
+    margin-bottom: 30px; /* Add space between services */
+     display: flex; /* Enable flexbox for alignment */
+    align-items: center; /* Vertically center service items */
+    text-align: left; /* Left-align service descriptions */
+}
+
+.service h3 {
+    color: #333; /* Red heading color */
+    margin-bottom: 10px; /* Add space below service titles */
+    
+}   
+
+.service p {
+    font-size: 1.1em; /* Adjust font size */
+    
+}
+.service img {
+    margin: 0 auto 40px;
+    flex: 3; /* Let image take up 3/4 of available space */
+    max-width: 60%; /* Limit image size to prevent it from taking up the whole screen */
+    margin-right: 40px; /* Add space between image and text */
+    align-self: flex-start; /* Align image to the top of its container */ 
+}
+.service .description {
+    flex: 1; /* Let description take up 1/4 of available space */
+}
+ /* Additional CSS for the FAQs section */
+ #faqs {
+    background-color: #f2f2f2; /* Grey background color */
+    padding: 100px 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align content */
+}
+
+#faqs h2 {
+    margin-bottom: 40px; /* Add space below heading */
+    color: #000; /* Black text color */
+}
+
+.faq-container {
+    display: flex; /* Enable flexbox for layout */
+    justify-content: center; /* Center-align content horizontally */
+    align-items: flex-start; /* Align items at the top */
+    max-width: 1200px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.faq-column {
+    flex: 1; /* Allow each column to grow to fill available space */
+    max-width: 50%; /* Each column takes up half of the container */
+    padding: 0 20px; /* Add space between columns */
+    text-align: left; /* Left-align text */
+}
+
+.common-questions {
+    margin-bottom: 40px; /* Add space below common questions */
+}
+
+.faq {
+    margin-bottom: 30px; /* Add space between FAQs */
+    text-align: left; /* Left-align FAQ text */
+}
+
+.faq h3 {
+    color: #000; /* Black text color */
+    margin-bottom: 10px; /* Add space below FAQ titles */
+}
+
+.faq p {
+    font-size: 1.1em; /* Adjust font size */
+}
+ /* Additional CSS for the footer */
+ footer {
+    background-color: #333; /* Dark background color for the footer */
+    color: #fff; /* White text color */
+    padding: 50px 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align content */
+}
+
+.contact-info {
+    margin-bottom: 20px; /* Add space below contact information */
+}
+
+.contact-info p {
+    margin: 5px 0; /* Adjust margin for contact information */
+}
+
+.contact-info a {
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/*Styling for the form*/
+
+#booking-section {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 50px 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align content */
+}
+
+#booking-section h2 {
+    margin-bottom: 20px; /* Add space below heading */
+    color: #333; /* Dark text color */
+}
+
+#booking-section p {
+    margin-bottom: 40px; /* Add space below paragraph */
+    color: #666; /* Text color */
+}
+
+/* Style the booking button */
+.booking-button {
+    background-color: #007bff; /* Blue button color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Style the form */
+.booking-form {
+    max-width: 600px; /* Set maximum width for the form */
+    margin: 0 auto; /* Center the form */
+    text-align: left; /* Left-align form elements */
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="tel"],
+.booking-form select,
+.booking-form textarea {
+    width: 100%; /* Full width for form inputs */
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 20px; /* Add space between form elements */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border-radius */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.booking-form textarea {
+    height: 100px; /* Set height for textarea */
+}
